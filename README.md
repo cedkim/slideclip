@@ -1,2 +1,2 @@
 # `slide/clip`
-Presentations, made easy and beautiful.
+Slideshows, made easy and beautiful.
