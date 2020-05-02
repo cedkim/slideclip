@@ -6,13 +6,22 @@
     <title>{{title label="Slideshow title"}}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, shrink-to-fit=no"/>
     <link href="https://fonts.googleapis.com/css2?family={{font type=choice input=dropdown label="Font" options="Karla,Inconsolata,Jost,Dosis,Barlow,Bitter,DM Serif Text"}}:wght@400;700&display=swap" rel="stylesheet" type="text/css"/>
-    <style type="text/css">body{padding:none;margin:none;}body,p{font-family:"{{font}}",sans-serif;font-size:15pt;}h2{font-size:26pt;}#bodyContainer{height:100vh;padding:none;margin:none;}#fadeContainer{height:100vh;padding:none;margin:none;}.slide{height:100vh;width:100vh;padding:1.5rem;color:rgba(255,255,255,0.4);}@media (min-width:768px){.slideText{width:33.33vw;color:rgba(255,255,255,0.6);}}</style>
+    <style type="text/css">body{padding:none;margin:none;}body,p{font-family:"{{font}}",sans-serif;font-size:15pt;}h2{font-size:26pt;}#bodyContainer{height:100vh;padding:none;margin:none;}#fadeContainer{height:100vh;padding:none;margin:none;}.slideImg{display:none;}.slide{height:100vh;width:100vh;padding:1.5rem;color:rgba(255,255,255,0.4);}@media (min-width:768px){.slideText{width:33.33vw;color:rgba(255,255,255,0.6);}}</style>
   </head>
   <body id="bodyContainer">
     <div id="fadeContainer">
       {{#section slides label="Slides" multiple=true}}
+      <img class="slideImg" src="{{slide-image type=image label="Slide image" tag=false}}" hidden="hidden"/>
       <div class="slide">{{slide-content type=html label="Slide content" editor=wysiwyg}}</div>
       {{/section}}
     </div>
+    <script type="text/javascript">
+    var bodyContainer = document.getElementById("bodyContainer");
+    var fadeContainer = document.getElementById("fadeContainer");
+    var slides = document.getElementsByClassName("slide");
+    var slideImgs = document.getElementsByClassName("slideImg");
+    bodyContainer.onload() = function() {}
+    bodyContainer.onscroll = function() {}
+    </script>
   </body>
 </html>
