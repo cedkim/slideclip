@@ -22,7 +22,12 @@
     var slideImgs = document.getElementsByClassName("slideImg");
     function showSlideImg() {
       for(var i; i < slides.length; i++) {
-        if((slides[i].getBoundingClientRect()).bottom <= (window.innerWidth || document.documentElement.clientWidth)) {
+        if((slides[i].getBoundingClientRect()).bottom <= slides[i].offsetHeight) {
+          fadeContainer.src = slideImgs[i].src;
+          fadeContainer.style.opacity = (window.innerWidth || document.documentElement.clientWidth) / (slides[i].getBoundingClientRect()).bottom;
+        } else if((slides[i].getBoundingClientRect()).bottom == slides[i].offsetHeight) {
+          bodyContainer.src = slideImgs[i].src;
+          fadeContainer.style.opacity = 0;
         }
       }
     }
